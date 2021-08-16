@@ -1,11 +1,11 @@
 import Home from './components/Home'
-import Categories from './screens/category/Categories'
-import AddCategory from './screens/category/AddCategory'
-import EditCategory from './screens/category/EditCategory'
-import AddProduct from './screens/product/AddProduct'
-import Products from './screens/product/Products'
-import EditProduct from './screens/product/EditProduct'
-
+import Categories from './screens/admin/category/Categories'
+import AddCategory from './screens/admin/category/AddCategory'
+import EditCategory from './screens/admin/category/EditCategory'
+import AddProduct from './screens/admin/product/AddProduct'
+import Products from './screens/admin/product/Products'
+import EditProduct from './screens/admin/product/EditProduct'
+import HomePage from './screens/client/HomePage'
 
 export default {
     mode:'history',
@@ -42,5 +42,9 @@ export default {
             props: true,
             name: 'EditProduct'
         },
+        {
+            path: '/home',
+            component: HomePage
+        }
     ]
 }
