@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import EventBus from '../../eventbus';
 export default {
   data: function () {
     return {
@@ -55,6 +56,7 @@ export default {
             axios.get('http://localhost:8000/api/user').then(response => {
                 if(response.status >= 200 && response.status < 300) {
                     if(this.email === response.email) {
+                      EventBus.$emit('authCheck')
                         this.$router.push('/admin/categories')
                     }
                 }
