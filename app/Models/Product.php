@@ -10,4 +10,8 @@ class Product extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function category() {
+        $this->belongsTo('App\Category', 'category_id');
+    }
 }

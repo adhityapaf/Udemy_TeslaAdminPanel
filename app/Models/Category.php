@@ -10,4 +10,9 @@ class Category extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function products()
+    {
+        $this->hasMany('App\Product', 'category_id');
+    }
 }
