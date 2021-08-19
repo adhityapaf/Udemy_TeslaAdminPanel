@@ -4,10 +4,10 @@ import routes from './routes'
 import index from './index'
 import vuetify from './vuetify';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faPen, faTrash, faCamera } from '@fortawesome/free-solid-svg-icons'
+import { faPen, faTrash, faCamera, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faPen, faTrash, faCamera)
+library.add(faPen, faTrash, faCamera, faSignOutAlt)
 
 
 Vue.use(VueRouter)

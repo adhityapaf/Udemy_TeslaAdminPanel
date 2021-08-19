@@ -21,13 +21,24 @@
       <v-btn class="ml-2" @click="() => this.$router.push('addProduct')">
           Add Products
       </v-btn>
+      <v-btn class="mx-2" fab dark medium color="red" v-on:click="logout()">
+        <font-awesome-icon icon="sign-out-alt" style="font-size:25px"></font-awesome-icon>
+      </v-btn>
     </v-toolbar>
   </div>
 </template>
 
 <script>
 export default {
-
+  methods: {
+    logout() {
+      axios.post('http://localhost:8000/admin/logout').then(response => {
+        if (response.status >= 200 && response.status < 300) {
+          this.$router.push({name: 'Login'})
+        }
+      })
+    }
+  }
 }
 </script>
 
