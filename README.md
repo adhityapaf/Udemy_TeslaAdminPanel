@@ -1,8 +1,16 @@
 # Udemy_TeslaAdminPanel
 
+## .env :
+From line 21 until 23, add this :
+`SESSION_LIFETIME=120`
+`SESSION_DOMAIN=localhost`
+`SANCTUM_STATEFUL_DOMAINS=localhost:8000`
+`SESSION_SECURE_COOKIE=false`
+`SESSION_DRIVER=cookie`
+
 How to run on your machine :
 1. Clone
-2. Create `.env` (duplicate from `.example.env`)
+2. Create `.env` (duplicate from `.example.env` and modify like above)
 3. Run `composer install`
 4. Run `npm install`
 5. Run `php artisan key:generate`
