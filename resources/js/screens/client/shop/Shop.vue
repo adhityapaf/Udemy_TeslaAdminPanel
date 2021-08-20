@@ -66,26 +66,24 @@
           <v-card-text tile outlined>
             <v-card-title class="subheading">Latest Products</v-card-title>
             <v-divider></v-divider>
-            <div class="row">
-              <div class="col-12 col-md-3 col-sm-6 col-xs-6 text-center" v-for="product in products" :key="product.id">
-                <v-hover v-slot:default="{ hover }" open-delay="240">
-                  <v-card :elevation="hover ? 16 : 2">
-                    <v-img class="white--text align-end" height="200px" :src="'products/'+product.image" gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"> 
-                      <v-card-title>{{ product.name }}</v-card-title>
-                    </v-img>
-                    <v-card-text class="text--primary text-center">
-                      <div>{{ product.price }}</div>
-                      <div>{{ product.category.name}}</div>
-                    </v-card-text>
-                    <div class="text-center">
-                      <v-btn href="" class="ma-2" outlined color="info"
-                        >View Product</v-btn
-                      >
-                    </div>
-                  </v-card>
-                </v-hover>
-              </div>
-            </div>
+                        <div class="row text-center">
+                            <div class="col-md-2 col-sm-4 col-xs-12 text-center" v-for="product in products" :key="product.id">
+                                <v-hover v-slot:default="{hover}" open-delay="240">
+                                    <v-card :elevation="hover ? 16 : 2">
+                                        <v-img :src="'/products/'+product.image" class="white--text align-end" height="200px" gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)">
+                                            <v-card-title>{{ product.name }}</v-card-title>
+                                        </v-img>
+                                        <v-card-text class="text-primary text-center">
+                                            <div>{{ product.price}}</div>
+                                            <div>{{ product.category.name}}</div>
+                                        </v-card-text>
+                                        <div class="text-center">
+                                            <v-btn @click="() => $router.push({name: 'ProductDetails', query: {product}})" class="ma-2" outlined color="info">View Product</v-btn>
+                                        </div>
+                                    </v-card>
+                                </v-hover>
+                            </div>
+                        </div>
           </v-card-text>
         </v-col>
       </v-row>
