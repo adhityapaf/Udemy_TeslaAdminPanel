@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     authCheck() {
-      axios.get('http://localhost:8000/api/user').then(response => {
+      axios.get('api/user').then(response => {
         if (response.status >= 200 && response.status < 300) {
           this.authenticated = true
         }

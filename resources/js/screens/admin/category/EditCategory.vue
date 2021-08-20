@@ -51,7 +51,7 @@ export default {
       this.order && formData.append("order", this.order);
       this.image && formData.append("image", this.image);
       axios
-        .post("http://127.0.0.1:8000/api/update/category/"+this.category.id, formData)
+        .post("api/update/category/"+this.category.id, formData)
         .then((response) => {
           console.log(response.data);
           if (response.status >= 200 && response.status < 300) {

@@ -52,8 +52,8 @@ export default {
     handleLogin() {
     console.log(this.form);
       axios.get("/sanctum/csrf-cookie").then(response => {
-        axios.post('http://localhost:8000/admin/login', this.form).then(response => {
-            axios.get('http://localhost:8000/api/user').then(response => {
+        axios.post('admin/login', this.form).then(response => {
+            axios.get('api/user').then(response => {
                 if(response.status >= 200 && response.status < 300) {
                     if(this.email === response.email) {
                       EventBus.$emit('authCheck')

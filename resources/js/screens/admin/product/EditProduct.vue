@@ -18,6 +18,17 @@
 
       <v-text-field label="Price" required dark v-model="price"></v-text-field>
 
+      <v-select
+        v-model="category"
+        return-object
+        :items="categories"
+        label="Category"
+        item-text="name"
+        dark
+        outlined
+        dense
+      ></v-select>
+
       <v-row class="mb-2">
         <font-awesome-icon
           icon="camera"
@@ -41,13 +52,15 @@
 
 <script>
 export default {
-    props: ["product"],
+  props: ["product"],
   data: function () {
     return {
       name: this.product.name,
       price: this.product.price,
       image: null,
       description: this.product.description,
+      categories: [],
+      category: this.product.category,
     };
   },
   methods: {
@@ -58,8 +71,10 @@ export default {
       this.price && formData.append("price", this.price);
       this.description && formData.append("description", this.description);
       this.image && formData.append("image", this.image);
+      this.category && formData.append("category_id", this.category.id);
+
       axios
-        .post("http://127.0.0.1:8000/api/update/product/"+this.product.id, formData)
+        .post("api/update/product/" + this.product.id, formData)
         .then((response) => {
           console.log(response.data);
           if (response.status >= 200 && response.status < 300) {
@@ -67,6 +82,21 @@ export default {
           }
         });
     },
+
+    getCategories() {
+      axios.get("api/categories").then((response) => {
+        if (response.status >= 200 && response.status < 300) {
+          var categoryArray = [];
+          response.data.categories.map((category) => {
+            categoryArray.push({ name: category.name, id: category.id });
+          });
+          this.categories = categoryArray;
+        }
+      });
+    },
+  },
+  mounted() {
+    this.getCategories();
   },
 };
 </script>
