@@ -12,8 +12,8 @@
         </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn class="hidden-sm-and-down white font-weight-bold black--text"
-        >Specifications</v-btn
+      <v-btn class="hidden-sm-and-down white font-weight-bold black--text" @click="() => this.$router.push({name: 'Shop'})"
+        >Shop</v-btn
       >
       <v-btn class="hidden-sm-and-down white font-weight black--text ml-3"
         >Order Now</v-btn

@@ -124,4 +124,12 @@ class ProductController extends Controller
             'message' => 'Product deleted successfully'
         ]);
     }
+
+    public function latestProducts()
+    {
+        $products = Product::with('category')->orderBy('updated_at', 'desc')->take(4)->get();
+        return response()->json([
+            'products' => $products
+        ]);
+    }
 }
