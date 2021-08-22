@@ -9,6 +9,7 @@ import HomePage from './screens/client/HomePage'
 import Login from './screens/auth/Login'
 import Shop from './screens/client/shop/Shop'
 import ProductDetails from './screens/client/shop/ProductDetails'
+import CategoryProducts from './screens/client/shop/CategoryProducts'
 
 export default {
     mode:'history',
@@ -64,6 +65,12 @@ export default {
             component: ProductDetails,
             props: true,
             name: 'ProductDetails'
+        },
+        {
+            path: '/shop/category/products',
+            component: CategoryProducts,
+            props: true,
+            name: 'CategoryProducts'
         }
     ]
 }
