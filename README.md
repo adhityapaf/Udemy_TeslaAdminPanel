@@ -17,7 +17,7 @@ How to run on your machine :
 6. Run `php artisan migrate`
 7. Run `php artisan serve`
 8. and Run `npm run watch`
-9. Finish
+9. Finish.
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
