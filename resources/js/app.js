@@ -6,6 +6,7 @@ import vuetify from './vuetify';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faPen, faTrash, faCamera, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import coreState from './coreState'
 
 library.add(faPen, faTrash, faCamera, faSignOutAlt)
 
@@ -22,5 +23,6 @@ const app = new Vue({
     components: {
         index
     },
-    vuetify
+    vuetify,
+    store: coreState
 });
